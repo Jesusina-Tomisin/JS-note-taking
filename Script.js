@@ -33,7 +33,7 @@ class App {
       document.body.addEventListener("mouseover", event => {
         this.openTooltip(event);
       });
-  
+       
       document.body.addEventListener("mouseout", event => {
         this.closeTooltip(event);
       });
@@ -81,7 +81,7 @@ class App {
       const text = this.$noteText.value;
       const hasNote = title || text;
   
-      if (isFormClicked) {
+      if (isFormClicked) {``
         this.openForm();
       } else if (hasNote) {
         this.addNote({ title, text });
@@ -106,6 +106,7 @@ class App {
   
     openModal(event) {
         if(event.target.matches('.toolbar-delete')) return;
+
       if (event.target.closest(".note")) {
         this.$modal.classList.toggle("open-modal");
         this.$modalTitle.value = this.title;
